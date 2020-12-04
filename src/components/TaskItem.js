@@ -2,9 +2,9 @@ import React from 'react'
 import TaskList from './TaskList';
 
 //used to create a task element
-function ListItem(props){
+function ListItem({value, ...props}){
     return (
-        <li id={props.id} complete={props.complete}>{props.value}</li> 
+        <li {...props}>{value}</li> 
     )
 }
 
@@ -16,7 +16,7 @@ function TaskItem(props) {
             <button id="removebutton" onClick={() => props.removeTasks(task.id)}>remove</button>
             
             {/* if the task is complete, hide the complete button */}
-            {task.complete==="false"? <button id="completebutton" onClick={() => props.completeTasks(task.id)}>complete</button> : null }
+            {task.complete===false? <button id="completebutton" onClick={() => props.completeTasks(task.id)}>complete</button> : null }
             
         </div>   
         )

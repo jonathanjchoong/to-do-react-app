@@ -22,14 +22,14 @@ function TaskList() {
         const compArr = [...tasks];
         compArr.find(function(task){
             return task.id === comptask;
-        }).complete = "true";
+        }).complete = true;
         setTasks(compArr);
     }
     
     // returns array of items which are marked incomplete
     const itemIncomplete = () => {
         const taskIncomplete = [...tasks].filter(function(task) {
-            return task.complete !== "true";
+            return task.complete !== true;
         });
         return taskIncomplete;
     }
@@ -37,7 +37,7 @@ function TaskList() {
     //returns array of items which are marked complete
     const itemComplete = () => {
         const taskComplete = [...tasks].filter(function(task) {
-            return task.complete === "true";
+            return task.complete === true;
         });
         return taskComplete;
     }

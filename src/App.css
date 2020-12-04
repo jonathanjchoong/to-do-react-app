@@ -124,7 +124,7 @@ li {
   list-style-type: none;
 }
 
-li[complete="true"] {
+.completed li {
   color: grey;
   text-decoration: line-through;
 }
